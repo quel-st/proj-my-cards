@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.0/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/card.css}">
+    <title>MyCards</title>
+</head>
+
+<body>
+    <header>
+        <nav class="logo">
+            <a th:href="@{/home}"><img th:src="@{/images/logo.svg}" alt="Logo-MyCards" /></a>
+            <p class="logo-title">MYCARDS</p>
+        </nav>
+    </header>
+
+    <body>
+        <section>
+            <main class="container"></main>
+
+            <div class="face">
+                <div class="front">
+                    <table class="table table1" id="tablista">
+                        <thead>
+                            <tr>
+                            <tr>
+                                <th class="titulo1">Pergunta</th>
+
+                            </tr>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="umDeck : ${deck}">
+                            <tr th:each="umCard : ${cartas}">
+                                <td th:text="${umCard.frente}">
+                                </td>
+                                
+                            </tr>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <div class="back">
+                    <table class="table table2" id="tablista">
+                        <thead>
+                            <tr>
+                            <tr>
+                                <th class="titulo2 white">Resposta</th>
+
+                            </tr>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr th:each="umDeck : ${deck}">
+                            <tr class="white" th:each="umCard : ${cartas}">
+                                <td th:text="${umCard.verso}"></td>
+
+                            </tr>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- <div class="face"> -->
+
+
+                <!-- <div class="front"> -->
+
+                <!-- <h2 class="titulo1">FRONT</h2>
+                    <p class="pergunta">O que é Programação?</p> -->
+
+                <!-- 
+                </div>
+
+                <div class="back">
+                    <h2 class="white titulo2">BACK</h2>
+                    <p class="white resposta">Qual a definição de programação?
+                        Programação é o processo de criação de um conjunto de instruções que dizem ao computador como
+                        realizar uma tarefa</p>
+                </div> -->
+                <!-- </div> -->
+        </section>
+    </body>
+
+
+    <!-- <tr th:each="umaDeck : ${listaCards}">
+                <td th:text="${umaDeck.id}"></td>
+                <td th:text="${umaDeck.nome}"></td>
+                <td></td>
+                <td>
+                    <a th:href="@{'/decks/alterar/' + ${umaDeck.id}}" class="btn btn-warning">Alterar</a>
+                </td>
+            </tr> -->
+    <!-- </tbody>
+    </table> -->
+    </main>
+    <footer th:fragment="footer" class="footer">
+        <img th:src="@{/images/logo.svg}" alt="logo" />
+        <p>COPYRIGHT © 2022</p>
+        <script th:src="@{/webjars/jquery/3.6.1/dist/jquery.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/5.2.0/js/bootstrap.min.js}"></script>
+    </footer>
+</body>
+
+</html>

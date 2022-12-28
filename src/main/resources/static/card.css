@@ -1,0 +1,157 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Roboto:wght@500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(123, 177, 208);
+}
+
+header {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    justify-content: space-between;
+    padding: 5px 203px;
+    box-shadow: 10px 4px rgba(0, 0, 0, 0.11);
+}
+
+section {
+    width: 500px;
+    margin: 50px auto;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #ffffff;
+    font-weight: bold;
+    padding-left: 70px;
+}
+
+table {
+    border-collapse: collapse;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.table1 {
+    border-color: #e5bf2a;
+}
+
+.table2 {
+    border-color: #544816;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo p {
+    font-weight: 700;
+    font-size: 20px;
+    font-family: "Outfit";
+}
+
+
+.face {
+    width: 400px;
+    height: 450px;
+    perspective: 700px;
+}
+
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 700ms;
+    text-align: center;
+
+}
+
+.front {
+    background: #e5bf2a;
+    z-index: 1;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+
+}
+
+.back {
+    background: #544816;
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+
+}
+
+.face:hover .front {
+    transform: rotateY(180deg);
+    z-index: 0;
+}
+
+.face:hover .back {
+    transform: rotateY(0);
+    z-index: 1;
+}
+
+.white {
+    color: white;
+}
+
+.titulo1 {
+    font-family: "Outfit";
+    text-shadow: 2px 2px 0 #ffffff;
+}
+
+.titulo2 {
+    font-family: "Outfit";
+    text-shadow: 2px 2px 0 #000000;
+}
+
+.pergunta {
+    padding-top: 10rem;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-shadow: #c3c3c3 3px 2px 2px;
+}
+
+.resposta {
+    padding-top: 10rem;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-shadow: #474747 3px 5px 2px;
+}

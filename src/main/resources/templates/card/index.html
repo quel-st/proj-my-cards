@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.0/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/site.css}" />
+    <title>MyCards</title>
+</head>
+
+<body>
+    <header>
+        <nav class="logo">
+            <a th:href="@{/home}"><img src="images/logo.svg" alt="Logo-MyCards" /></a>
+            <p class="logo-title">MYCARDS</p>
+        </nav>
+    </header>
+
+    <body>
+        <main class="container">
+            <div class="div">
+                <p class="identificacao">CARDS</p>
+                <a href="/cards/novo" class="btn btn-primary">Novo</a>
+                <table class="table" id="tabcards">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Frente</th>
+                            <th>Verso</th>
+                            <th>Deck</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="umCard : ${listaCards}">
+                            <td th:text="${umCard.nome}"></td>
+                            <td th:text="${umCard.frente}"></td>
+                            <td th:text="${umCard.verso}"></td>
+                            <td th:text="${umCard.deckResidencia?.nome}"></td>
+
+                            <td>
+                                <a th:href="@{'/cards/alterar/' + ${umCard.id}}" class="btn btn-warning">Alterar</a>
+                                <button class="btn btn-danger js-delete" th:data-id="${umCard.id}">Excluir</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a href="/decks" class="btn btn-dark">Voltar</a>
+
+        </main>
+        <div class="modal" tabindex="-1" id="modalcard">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Excluir Card</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Confirma a exclusão do card?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="btnnao" data-bs-dismiss="modal">Não</button>
+                        <button type="button" class="btn btn-primary" id="btnsim">Sim</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer th:fragment="footer" class="footer">
+            <img th:src="@{/images/logo.svg}" alt="logo" />
+            <p>COPYRIGHT © 2022</p>
+            <script th:src="@{/webjars/jquery/3.6.1/dist/jquery.min.js}"></script>
+            <script th:src="@{/webjars/bootstrap/5.2.0/js/bootstrap.min.js}"></script>
+        </footer>
+
+        <script th:src="@{/script.js}"></script>
+    </body>
+
+</html>

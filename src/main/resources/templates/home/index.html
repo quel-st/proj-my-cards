@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/site.css}" />
+    <title>MyCards</title>
+</head>
+
+<body>
+    <header>
+        <nav class="logo">
+            <a th:href="@{/home}"><img src="images/logo.svg" alt="Logo-MyCards" /></a>
+            <p class="logo-title">MYCARDS</p>
+        </nav>
+        <button class="button"><a th:href="@{/decks}">EXPERIMENTE JÁ</a></button>
+    </header>
+
+    <main>
+        <div class="first-container">
+            <h1 class="title">Estude de forma organizada com flash cards</h1>
+            <section class="images">
+                <img src="images/girl.png" alt="girl" />
+                <div class="bubble-content">
+                    <img src="images/bubble.png" alt="bubble-card" class="card" />
+                    <p class="bubble-text">
+                        Flashcards são cartões de estudos muito utilizados para memorizar um conteúdo, processo ou ainda
+                        se preparar para uma apresentação importante.
+                    </p>
+                </div>
+                <img src="images/Books Pile.png" alt="books" class="book" />
+            </section>
+        </div>
+
+        <section class="second-container">
+            <img src="images/pet-container.png" alt="pet-background" class="pet-background" />
+            <img src="images/pet.png" alt="pet" class="pet" />
+        </section>
+    </main>
+    <footer>
+        <img src="images/logo.svg" alt="logo" />
+        <p>COPYRIGHT © 2022</p>
+    </footer>
+</body>
+
+</html>

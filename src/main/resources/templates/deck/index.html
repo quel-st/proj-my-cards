@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.0/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/site.css}" />
+    <title>MyCards</title>
+</head>
+
+<body>
+    <header>
+        <nav class="logo">
+            <a th:href="@{/home}"><img src="images/logo.svg" alt="Logo-MyCards" /></a>
+            <p class="logo-title">MYCARDS</p>
+        </nav>
+    </header>
+    <main class="container">
+        
+        <div class="div">
+            <p class="identificacao">DECKS</p>
+        <a href="/decks/novo" class="btn btn-primary">Novo</a>
+        <table class="table" id="tabdecks">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="umaDeck : ${listaDecks}">
+                    <td th:text="${umaDeck.id}"></td>
+                     <td th:if="${umaDeck.nome != null}" >
+                            <a th:text="${umaDeck.nome}" th:href="@{'/lista/puxar/' + ${umaDeck.id}}" class="btn btn-light" style="border-radius: 50px;">Ver</a>
+                        </td>
+                    <td>
+                        <a th:href="@{'/decks/alterar/' + ${umaDeck.id}}" class="btn btn-dark">Alterar</a>
+                        <button class="btn btn-danger js-delete" th:data-id="${umaDeck.id}">Excluir</button>
+                        <a th:href="@{/cards/novo}" class="btn btn-success">ADD CARD</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </main>
+
+    <div class="modal" tabindex="-1" id="modaldeck">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Excluir Card</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Confirma a exclusão do deck?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="btnnao" data-bs-dismiss="modal">Não</button>
+                <button type="button" class="btn btn-primary" id="btnsim">Sim</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer th:fragment="footer" class="footer">
+        <img th:src="@{/images/logo.svg}" alt="logo" />
+            <p>COPYRIGHT © 2022</p>
+        <script th:src="@{/webjars/jquery/3.6.1/dist/jquery.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/5.2.0/js/bootstrap.min.js}"></script>
+    </footer>
+
+
+
+    <script th:src="@{deckjs/script.js}"></script> 
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Roboto:wght@500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #ffd52e;
+}
+
+header {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    justify-content: space-between;
+    padding: 5px 203px;
+    box-shadow: 10px 4px rgba(0, 0, 0, 0.11);
+}
+
+.identificacao {
+    padding-top: 2rem;
+    font-family: "Outfit";
+    font-size: 2rem;
+}
+
+.div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo p {
+    font-weight: 700;
+    font-size: 20px;
+    font-family: "Outfit";
+}
+
+.button {
+    border: none;
+    height: 62px;
+    width: 227px;
+    border-radius: 25px;
+    background-color: #ffd52e;
+    cursor: pointer;
+    box-shadow: 2px 3px rgba(0, 0, 0, 0.178);
+}
+
+button a {
+    padding: 0;
+    text-decoration: none;
+    max-width: 0;
+    font-weight: 500;
+    font-size: 20px;
+    color: black;
+}
+
+button:hover {
+    opacity: 75%;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    gap: 190px;
+    align-items: flex-start;
+}
+
+.title {
+    width: 552px;
+    height: 224px;
+    font-size: 70px;
+    font-weight: 700;
+    text-align: center;
+    color: #40350b;
+    margin-bottom: 20px;
+}
+
+.first-container {
+    padding-left: 60px;
+    padding-top: 30px;
+}
+
+.images {
+    display: flex;
+    flex-direction: row;
+    width: 100px;
+    align-items: center;
+}
+
+.bubble-content {
+    position: relative;
+    width: 449px;
+    height: 274px;
+}
+
+.card {
+    position: absolute;
+    z-index: 2;
+}
+
+.bubble-text {
+    position: absolute;
+    z-index: 2;
+    width: 409px;
+    height: 182px;
+    top: 90px;
+    left: 20px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.book {
+    position: relative;
+    top: -20px;
+    right: -160px;
+}
+
+.second-container {
+    margin-top: 105px;
+}
+
+.pet-background {
+    position: absolute;
+}
+
+.pet {
+    position: absolute;
+    z-index: 5;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    font-weight: bold;
+    padding-left: 70px;
+}
